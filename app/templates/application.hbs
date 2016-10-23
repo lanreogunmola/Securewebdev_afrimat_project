@@ -16,27 +16,59 @@
               <li>{{#link-to 'ecommerce'}}Home{{/link-to}} </li>
               <li>{{#link-to 'ecommerce.product'}}Products{{/link-to}}</li>
             
-          <form class="navbar-form navbar-left" method="GET" role="search" action=''>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search" name="q" value=' '>
-            </div>
-           <!--  <button type="submit" class="btn btn-default">Submit</button> -->
-          </form>
+            <div class="navbar-right search-field">
+			{{#bs-form formLayout="inline" action="search"}}
+				{{bs-input type="text" value=searchField placeholder="Search Product"}}
+				<button type="submit" class="btn btn-default">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>
+			{{/bs-form}}
+		    </div>
 
           </ul>
-          
+
+
+          <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                                 
+                      <form class='navbar-form' method='POST' action=''>
+                        <div class='form-group'>
+                            <input type='text' class='form-control' name='username' placeholder='Username' /> 
+                        </div>
+                        <div class='form-group'>
+                            <input type='password' class='form-control' name='password' placeholder='Password' />
+                        </div>
+                        <button type='submit' class='btn btn-default btn-block'>Login</button>
+                    </form>
+                   <p class='text-center'><a href=''>Forgot password</a>?</p>
+                   </ul>
+                </li>
+          </ul>
 
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-         <div class="row">
+
+      <ul> 
+      {{# each Product in Product}}
+
+           <li>  
+             {{Product.description}} ({{Product.price}})<br>
+             <img src="{{Product.image}}" />
+           </li>
+
+       {{/each}}
+      </ul>
+        {{!--  <div class="row">
               <div class="col-md-12">
                          {{outlet}}
               </div>
 
-         </div>
+         </div> --}}
 
 
     </div><!-- /.container -->
