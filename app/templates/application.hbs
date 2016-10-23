@@ -1,5 +1,6 @@
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -14,10 +15,17 @@
           <ul class="nav navbar-nav">
               <li>{{#link-to 'ecommerce'}}Home{{/link-to}} </li>
               <li>{{#link-to 'ecommerce.product'}}Products{{/link-to}}</li>
-            {{!-- <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li> --}}
+            
+          <form class="navbar-form navbar-left" method="GET" role="search" action=''>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" name="q" value=' '>
+            </div>
+           <!--  <button type="submit" class="btn btn-default">Submit</button> -->
+          </form>
+
           </ul>
+          
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
