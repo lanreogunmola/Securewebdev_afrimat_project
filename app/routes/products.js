@@ -22,7 +22,7 @@ let products = [{
 	description: 'Good Quality Pendant',
 	price: '$97.99',
 	image: 'https://swaggwood.com/media/catalog/product/cache/1/thumbnail/400x/17f82f742ffe127f42dca9de82fb58b1/w/n/wn049.jpg'
-}]
+}];
 
 export default Ember.Route.extend({
 	model() {
