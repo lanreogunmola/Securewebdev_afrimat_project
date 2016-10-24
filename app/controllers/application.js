@@ -42,5 +42,24 @@ testProduct.pushObject(testimg2);
 testProduct.pushObject(testimg3);
 
 export default Ember.Controller.extend({
-	Product: testProduct
+	Product: testProduct,
+	searchField: '',
+	filteredProducts: testProduct,
+	actions: {
+             search: function () {
+                      var filter = this.get('searchField');
+                      var rx = new RegExp(filter, 'gi');
+                      var Product = this.get('Product');
+                      this.set('filteredProducts',
+                              Product.filter(function(Product){
+                                      return product.get('Description').match(rx) || Product.get('price').match(rx);
+
+                              })
+                      	)
+
+
+             }
+
+
+	}
 });

@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('ecommerce', function() {
     this.route('product');
   });
+  this.route('products');
+  this.route('register');
 });
 
 export default Router;

@@ -9,12 +9,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Afrimat</a>
+          <a class="navbar-brand" href="ecommerce">Afrimat</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-              <li>{{#link-to 'ecommerce'}}Home{{/link-to}} </li>
-              <li>{{#link-to 'ecommerce.product'}}Products{{/link-to}}</li>
+              {{!-- <li>{{#link-to 'ecommerce'}}Home{{/link-to}} </li> --}}
+              <li>{{#link-to 'products'}}Products{{/link-to}}</li>
             
             <div class="navbar-right search-field">
 			{{#bs-form formLayout="inline" action="search"}}
@@ -30,8 +30,8 @@
 
           <ul class="nav navbar-nav navbar-right">
                <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
+              <a href="register" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
+                  {{!-- <ul class="dropdown-menu" role="menu">
                                  
                       <form class='navbar-form' method='POST' action=''>
                         <div class='form-group'>
@@ -43,7 +43,7 @@
                         <button type='submit' class='btn btn-default btn-block'>Login</button>
                     </form>
                    <p class='text-center'><a href=''>Forgot password</a>?</p>
-                   </ul>
+                   </ul> --}}
                 </li>
           </ul>
 
@@ -53,22 +53,25 @@
 
     <div class="container">
 
-      <ul> 
-      {{# each Product in Product}}
 
-           <li>  
-             {{Product.description}} ({{Product.price}})<br>
-             <img src="{{Product.image}}" />
+          
+     {{!--  <ul class="list-group"> 
+      {{# each Product in filteredProducts}}
+
+           <li class="list-group-item">  
+             {{#link-to 'ecommerce.product'}}{{Product.description}} ({{Product.price}})<br>
+             <img class="feed-img" src="{{Product.image}}" />{{/link-to}}
            </li>
 
        {{/each}}
-      </ul>
-        {{!--  <div class="row">
+      </ul> --}}
+         <div class="row">
               <div class="col-md-12">
-                         {{outlet}}
+              {{outlet}}
+                         
               </div>
 
-         </div> --}}
+         </div>
 
 
     </div><!-- /.container -->

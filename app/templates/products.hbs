@@ -1,0 +1,38 @@
+
+
+<div class="jumbo">
+   <div class="right tomster"></div>
+   <h2>List of Products</h2>
+   <p> 
+   We specialize in the sales of quality African arts,batik, jewelry and home decoration.
+   <br>Browse through our product listings and make a selection
+   </p>
+   </div>
+
+   {{#each model as |products|}}
+     <article class="listing">
+       <h3>{{products.title}}</h3>
+       <div class="detail description">
+          <span>Description:</span> {{products.description}}
+       </div>
+
+       <div class="detail price">
+          <span>Price:</span> {{products.price}}
+       </div>
+
+       <div class="detail image">
+           <img class="feed-img" src="{{products.image}}">
+       </div>
+       </article>
+    {{/each}}
+
+{{!--  <ul class="list-group"> 
+      {{# each Product as |Product|}}
+
+           <li class="list-group-item">  
+             {{#link-to 'ecommerce.product'}}{{Product.description}} ({{Product.price}})<br>
+             <img class="feed-img" src="{{Product.image}}" />{{/link-to}}
+           </li>
+
+       {{/each}}
+      </ul> --}}
