@@ -9,7 +9,9 @@ Router.map(function() {
   this.route('ecommerce', function() {
     this.route('product');
   });
-  this.route('products');
+  this.route('products', function() {
+  	 this.route('detail', {path: "/:id" });
+  });
   this.route('register');
 });
 

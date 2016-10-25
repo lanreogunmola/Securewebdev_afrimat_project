@@ -11,7 +11,7 @@
 
    {{#each model as |products|}}
      <article class="listing">
-       <h3>{{products.title}}</h3>
+       <h3>{{#link-to 'products.detail' products}}{{products.title}}{{/link-to}}</h3>
        <div class="detail description">
           <span>Description:</span> {{products.description}}
        </div>
@@ -24,6 +24,7 @@
            <img class="feed-img" src="{{products.image}}">
        </div>
        </article>
+       {{!-- {{product-display product=product}} --}}
     {{/each}}
 
 {{!--  <ul class="list-group"> 
